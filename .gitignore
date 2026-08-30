@@ -1,0 +1,10 @@
+# Simulation
+*.vcd
+*.wlf
+transcript
+work/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
