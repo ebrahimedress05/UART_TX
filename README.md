@@ -16,11 +16,19 @@ Configuration is done through `PAR_EN` (enable/disable parity) and `PAR_TYP` (ev
 ## Repository Structure
 
 ```
-rtl/            → design source files
-tb/             → testbench and simulation scripts
-lint_reports/   → lint check report
-synthesis/      → synthesis scripts, constraints, netlist, and reports
-docs/images/    → schematics generated from the synthesis tool
+rtl/                      → design source files
+tb/                       → testbench and simulation scripts
+lint_reports/             → lint check report
+synthesis/
+  scripts/                → Design Compiler synthesis script
+  constraints/             → SDC/SDF files
+  netlist/                → gate-level netlist and .ddc
+  reports/                → area, timing, power, and synthesis log
+  formality/               → formal verification (RTL vs. netlist)
+    fm_script.tcl
+    fm.log
+    reports/               → passing/failing/aborted/unverified points
+docs/images/               → schematics generated from the synthesis tool
 ```
 
 ## Schematics
@@ -33,7 +41,13 @@ docs/images/    → schematics generated from the synthesis tool
 
 ![Internal RTL schematic](docs/images/internal_rtl_schematic.png)
 
+## Verification
+
+- Functional simulation with a self-checking testbench (ModelSim/QuestaSim)
+- Formal equivalence checking (RTL vs. gate-level netlist) using Synopsys Formality — **19/19 compare points passing**
+
 ## Tools Used
 
 - Simulation: ModelSim/QuestaSim
 - Synthesis: Synopsys Design Compiler
+- Formal Verification: Synopsys Formality
