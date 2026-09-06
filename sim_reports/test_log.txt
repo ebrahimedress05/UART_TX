@@ -1,0 +1,21 @@
+===================================================
+------------ STARTING UART_TX TESTBENCH --------------
+===================================================
+
+--- Running Case 1: Transmit with No Parity ---
+Transmit with no parity case PASSED
+
+--- Running Case 2: Transmit with Even Parity ---
+Transmit with even parity case PASSED
+
+--- Running Case 3: Transmit with Odd Parity ---
+Transmit with odd parity case PASSED
+
+--- Running Case 4: Ignore Valid while Busy (Glitch Test) ---
+Ignore valid while busy case PASSED
+
+--- Running Case 5: Boundary Pattern All Zeros (0x00) ---
+Boundary all zeros case PASSED
+
+--- Running Case 6: Boundary Pattern All Ones (0xFF) ---
+Boundary all ones case PASSED

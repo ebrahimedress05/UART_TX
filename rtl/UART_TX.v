@@ -17,15 +17,15 @@ wire ser_data ;
 wire Par_bit ;
 
 // Modules Instantiation
-FSM F1 (.Data_Valid(Data_Valid) , .PAR_EN(PAR_EN) , .ser_done(ser_done) , 
+FSM FSM (.Data_Valid(Data_Valid) , .PAR_EN(PAR_EN) , .ser_done(ser_done) , 
         .CLK(CLK) , .RST(RST) , .ser_en(ser_en) , .mux_sel(mux_sel) , .busy(Busy) ) ;  
 
-serializer S1 (.P_DATA(P_DATA) , .ser_en(ser_en) , .RST(RST) , .CLK(CLK) , .ser_data(ser_data) , 
-               .ser_done(ser_done)) ;  
+serializer serializer (.P_DATA(P_DATA) , .ser_en(ser_en) , .RST(RST) , .CLK(CLK) , .Data_Valid(Data_Valid) , 
+               .Busy(Busy) , .ser_data(ser_data) , .ser_done(ser_done)) ;  
 
-Parity_calc P1 (.P_DATA(P_DATA) , .Data_Valid(Data_Valid) , .PAR_TYP(PAR_TYP) , .CLK(CLK) ,
+Parity_calc Parity_calc (.P_DATA(P_DATA) , .Data_Valid(Data_Valid) , .PAR_TYP(PAR_TYP) , .CLK(CLK) ,
                 .RST(RST) , .busy(Busy) , .Par_bit(Par_bit)) ;
 
-MUX M1 (.ser_data(ser_data) , .Par_bit(Par_bit) , .mux_sel(mux_sel) , .TX_OUT(TX_OUT)) ;
+MUX MUX (.ser_data(ser_data) , .Par_bit(Par_bit) , .mux_sel(mux_sel) , .TX_OUT(TX_OUT)) ;
 
 endmodule

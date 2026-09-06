@@ -10,25 +10,32 @@ add wave -noupdate -expand -group TB_SIGNALS /tb/TX_OUT_tb
 add wave -noupdate -expand -group TB_SIGNALS /tb/Busy_tb
 add wave -noupdate -expand -group TB_SIGNALS /tb/check_reg_p
 add wave -noupdate -expand -group TB_SIGNALS /tb/check_reg
-add wave -noupdate -expand -group SERIALIZER_UNIT /tb/DUT/S1/ser_en
-add wave -noupdate -expand -group SERIALIZER_UNIT /tb/DUT/S1/ser_data
-add wave -noupdate -expand -group SERIALIZER_UNIT /tb/DUT/S1/ser_done
-add wave -noupdate -expand -group SERIALIZER_UNIT /tb/DUT/S1/shift_register
-add wave -noupdate -expand -group SERIALIZER_UNIT /tb/DUT/S1/count
-add wave -noupdate -expand -group FSM_UNIT /tb/DUT/F1/Data_Valid
-add wave -noupdate -expand -group FSM_UNIT /tb/DUT/F1/ser_done
-add wave -noupdate -expand -group FSM_UNIT /tb/DUT/F1/ser_en
-add wave -noupdate -expand -group FSM_UNIT /tb/DUT/F1/mux_sel
-add wave -noupdate -expand -group FSM_UNIT /tb/DUT/F1/busy
-add wave -noupdate -expand -group FSM_UNIT /tb/DUT/F1/current_state
-add wave -noupdate -expand -group FSM_UNIT /tb/DUT/F1/next_state
-add wave -noupdate -expand -group MUX4x1_UNIT /tb/DUT/M1/mux_sel
-add wave -noupdate -expand -group PARITY_CALC /tb/DUT/P1/PAR_TYP
-add wave -noupdate -expand -group PARITY_CALC /tb/DUT/P1/Par_bit
+add wave -noupdate -expand -group FSM_SIGNALS /tb/DUT/FSM/Data_Valid
+add wave -noupdate -expand -group FSM_SIGNALS /tb/DUT/FSM/PAR_EN
+add wave -noupdate -expand -group FSM_SIGNALS /tb/DUT/FSM/ser_done
+add wave -noupdate -expand -group FSM_SIGNALS /tb/DUT/FSM/ser_en
+add wave -noupdate -expand -group FSM_SIGNALS /tb/DUT/FSM/mux_sel
+add wave -noupdate -expand -group FSM_SIGNALS /tb/DUT/FSM/busy
+add wave -noupdate -expand -group FSM_SIGNALS /tb/DUT/FSM/current_state
+add wave -noupdate -expand -group FSM_SIGNALS /tb/DUT/FSM/next_state
+add wave -noupdate -expand -group SERIALIZER_SIGNALS /tb/DUT/serializer/P_DATA
+add wave -noupdate -expand -group SERIALIZER_SIGNALS /tb/DUT/serializer/ser_en
+add wave -noupdate -expand -group SERIALIZER_SIGNALS /tb/DUT/serializer/Data_Valid
+add wave -noupdate -expand -group SERIALIZER_SIGNALS /tb/DUT/serializer/Busy
+add wave -noupdate -expand -group SERIALIZER_SIGNALS /tb/DUT/serializer/ser_data
+add wave -noupdate -expand -group SERIALIZER_SIGNALS /tb/DUT/serializer/ser_done
+add wave -noupdate -expand -group SERIALIZER_SIGNALS /tb/DUT/serializer/shift_register
+add wave -noupdate -expand -group SERIALIZER_SIGNALS -radix unsigned /tb/DUT/serializer/count
+add wave -noupdate -expand -group PARITY_SIGNALS /tb/DUT/Parity_calc/PAR_TYP
+add wave -noupdate -expand -group PARITY_SIGNALS /tb/DUT/Parity_calc/Par_bit
+add wave -noupdate -expand -group MUX_SIGNALS /tb/DUT/MUX/ser_data
+add wave -noupdate -expand -group MUX_SIGNALS /tb/DUT/MUX/Par_bit
+add wave -noupdate -expand -group MUX_SIGNALS /tb/DUT/MUX/mux_sel
+add wave -noupdate -expand -group MUX_SIGNALS /tb/DUT/MUX/TX_OUT
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+WaveRestoreCursors {{Cursor 1} {12500 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 150
+configure wave -namecolwidth 245
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -42,4 +49,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {288400 ps} {416400 ps}
+WaveRestoreZoom {0 ps} {118178 ps}

@@ -19,6 +19,7 @@ Configuration is done through `PAR_EN` (enable/disable parity) and `PAR_TYP` (ev
 rtl/                      → design source files
 tb/                       → testbench and simulation scripts
 lint_reports/             → lint check report
+sim_reports/              → testbench pass/fail log
 synthesis/
   scripts/                → Design Compiler synthesis script
   constraints/             → SDC/SDF files
@@ -43,8 +44,10 @@ docs/images/               → schematics generated from the synthesis tool
 
 ## Verification
 
-- Functional simulation with a self-checking testbench (ModelSim/QuestaSim)
+- Functional simulation with a self-checking testbench (ModelSim/QuestaSim) — see [`sim_reports/test_log.txt`](sim_reports/test_log.txt)
 - Formal equivalence checking (RTL vs. gate-level netlist) using Synopsys Formality — **19/19 compare points passing**
+
+> **Note:** the netlist and Formality results above predate the `serializer` fix (registered → combinational `ser_data`/`ser_done`). They need to be regenerated against the current RTL before being relied on again.
 
 ## Tools Used
 

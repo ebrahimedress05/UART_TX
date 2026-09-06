@@ -3,47 +3,34 @@ module serializer (
     input wire ser_en ,
     input wire RST ,
     input wire CLK ,
-    output reg ser_data ,
-    output reg ser_done
+    input wire Data_Valid ,
+    input wire Busy ,
+    output wire ser_data ,
+    output wire ser_done
 );
   reg [7:0] shift_register ;
-  reg [3:0] count ;
+  reg [2:0] count ;
   always @(posedge CLK or negedge RST) begin
     if (!RST) begin
         shift_register <= 8'b0 ;
-        ser_done <= 1'b0 ;
-        count <= 4'b0 ;
-        ser_data <= 1'b0 ;
+        count <= 3'b0 ;
+    end
+
+    else if (Data_Valid && !Busy) begin
+        shift_register <= P_DATA ;
     end
 
     else if (ser_en) begin  
-        if (count == 4'b0) begin
-        shift_register <= P_DATA >> 1 ;
-        ser_done <= 1'b0 ;
-        count <= count + 1 ; 
-        ser_data <= P_DATA [0] ;           
-        end
-        else if (count < 4'd8) begin
-        if (count == 4'd7) begin
-            ser_done <= 1'b1 ;
-        end
-        else begin
-             ser_done <= 1'b0 ;
-        end
+        shift_register <= shift_register >> 1 ; 
         count <= count + 1'b1 ; 
-        ser_data <= shift_register [0] ;  
-        shift_register <= shift_register >> 1 ;
         end  
-        else  begin
-        ser_done <= 1'b1 ;
-        count <= 4'b0 ; 
-        end  
-    end
     
-        else begin
-        ser_done <= 1'b0 ;
-        count <= 4'b0 ;
-        ser_data <= 1'b0 ;          
+    else begin
+        count <= 3'b0 ;        
         end          
   end
+
+  assign ser_data = shift_register[0] ;
+  assign ser_done = (count == 3'b111) ? 1 : 0 ;
+
 endmodule
