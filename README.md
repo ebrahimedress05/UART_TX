@@ -36,6 +36,10 @@ dft/
   constraints/               → scan-aware SDC/SDF
   netlist/                  → scan-inserted gate-level netlist, .ddc, and Formality .svf
   reports/                  → area, power, timing, ports, DFT DRC, and coverage-estimate reports
+  formality/                 → formal verification (RTL vs. scan-inserted netlist)
+    fm_script.tcl
+    fm.log
+    reports/                 → passing/failing/aborted/unverified points
 docs/images/                 → schematics for the functional design
 docs/dft_images/             → schematics (PNG) for the scan-inserted design
 ```
@@ -106,10 +110,13 @@ Out of 714 total collapsed faults: 702 detected, 11 ATPG-untestable, 1 undetecta
 
 Full detail is available in [`dft/reports/dft_drc_post_dft.rpt`](dft/reports/dft_drc_post_dft.rpt), [`dft/reports/Area.rpt`](dft/reports/Area.rpt), and [`dft/reports/power.rpt`](dft/reports/power.rpt).
 
+**Post-DFT formal equivalence:** the scan-inserted netlist was re-verified against the RTL (with `test_mode` and `SE` held at `0`, and `SO` excluded as a scan-only port) using Synopsys Formality — **17/17 compare points passing, 0 failing, 0 aborted, 0 unverified**. See [`dft/formality/fm_script.tcl`](dft/formality/fm_script.tcl) and [`dft/formality/reports/`](dft/formality/reports/).
+
 ## Verification
 
 - Functional simulation with a self-checking testbench (ModelSim/QuestaSim) — see [`sim_reports/test_log.txt`](sim_reports/test_log.txt)
-- Formal equivalence checking (RTL vs. gate-level netlist) using Synopsys Formality — **17/17 compare points passing**
+- Formal equivalence checking, RTL vs. functional gate-level netlist, using Synopsys Formality — **17/17 compare points passing** (see [`synthesis/formality/`](synthesis/formality/))
+- Formal equivalence checking, RTL vs. scan-inserted (post-DFT) netlist, using Synopsys Formality — **17/17 compare points passing** (see [`dft/formality/`](dft/formality/))
 
 ## Tools Used
 
