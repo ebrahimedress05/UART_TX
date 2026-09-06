@@ -9,7 +9,7 @@ Report : power
         -analysis_effort low
 Design : UART_TX
 Version: O-2018.06-SP1
-Date   : Thu Aug 13 05:12:31 2026
+Date   : Mon Sep  7 05:16:06 2026
 ****************************************
 
 
@@ -39,9 +39,9 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-UART_TX                                2.37e-05 4.16e-05 5.25e+05 5.91e-04 100.0
-  M1 (MUX)                             7.34e-06 5.76e-07 2.44e+04 3.23e-05   5.5
-  P1 (Parity_calc)                     1.91e-06 4.52e-06 1.00e+05 1.06e-04  18.0
-  S1 (serializer)                      8.20e-06 2.92e-05 2.92e+05 3.29e-04  55.7
-  F1 (FSM)                             6.28e-06 7.33e-06 1.09e+05 1.23e-04  20.8
+UART_TX                                2.65e-05 4.03e-05 4.81e+05 5.48e-04 100.0
+  MUX (MUX)                            7.23e-06 5.73e-07 2.47e+04 3.25e-05   5.9
+  Parity_calc (Parity_calc)            1.92e-06 4.52e-06 1.00e+05 1.06e-04  19.4
+  serializer (serializer)              1.08e-05 2.77e-05 2.46e+05 2.85e-04  52.0
+  FSM (FSM)                            6.56e-06 7.53e-06 1.10e+05 1.24e-04  22.6
 1

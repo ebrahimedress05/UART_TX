@@ -42,12 +42,24 @@ docs/images/               → schematics generated from the synthesis tool
 
 ![Internal RTL schematic](docs/images/internal_rtl_schematic.png)
 
+## Synthesis Summary
+
+Synthesized with **Synopsys Design Compiler (O-2018.06-SP1)** using the `scmetro_tsmc_cl013g_rvt` standard-cell library.
+
+| Metric                 | Value        |
+|------------------------|--------------|
+| Total cell area        | 827.22 µm²   |
+| Number of cells        | 81           |
+| Sequential cells       | 15           |
+| Combinational cells    | 62           |
+| Total power            | 5.48e-04 mW  |
+
+Full breakdown is available in [`synthesis/reports/Area.rpt`](synthesis/reports/Area.rpt) and [`synthesis/reports/power.rpt`](synthesis/reports/power.rpt).
+
 ## Verification
 
 - Functional simulation with a self-checking testbench (ModelSim/QuestaSim) — see [`sim_reports/test_log.txt`](sim_reports/test_log.txt)
-- Formal equivalence checking (RTL vs. gate-level netlist) using Synopsys Formality — **19/19 compare points passing**
-
-> **Note:** the netlist and Formality results above predate the `serializer` fix (registered → combinational `ser_data`/`ser_done`). They need to be regenerated against the current RTL before being relied on again.
+- Formal equivalence checking (RTL vs. gate-level netlist) using Synopsys Formality — **17/17 compare points passing**
 
 ## Tools Used
 

@@ -3,30 +3,30 @@
 Report : area
 Design : UART_TX
 Version: O-2018.06-SP1
-Date   : Thu Aug 13 05:12:31 2026
+Date   : Mon Sep  7 05:16:06 2026
 ****************************************
 
 Library(s) Used:
 
     scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/Labs/Ass_Syn_2.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
 
-Number of ports:                           56
-Number of nets:                           138
-Number of cells:                           87
-Number of combinational cells:             65
-Number of sequential cells:                18
+Number of ports:                           58
+Number of nets:                           134
+Number of cells:                           81
+Number of combinational cells:             62
+Number of sequential cells:                15
 Number of macros/black boxes:               0
-Number of buf/inv:                         11
+Number of buf/inv:                         14
 Number of references:                       4
 
-Combinational area:                465.973206
-Buf/Inv area:                       50.598101
-Noncombinational area:             441.262495
+Combinational area:                437.732406
+Buf/Inv area:                       60.011701
+Noncombinational area:             389.487696
 Macro/Black Box area:                0.000000
-Net Interconnect area:           10220.050934
+Net Interconnect area:            9753.382080
 
-Total cell area:                   907.235701
-Total area:                      11127.286635
+Total cell area:                   827.220102
+Total area:                      10580.602182
 
 Hierarchical area distribution
 ------------------------------
@@ -36,12 +36,12 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  -----------
-UART_TX                            907.2357    100.0    0.0000     0.0000  0.0000  UART_TX
-F1                                 191.8021     21.1  114.1399    77.6622  0.0000  FSM
-M1                                  30.5942      3.4   30.5942     0.0000  0.0000  MUX
-P1                                 127.0836     14.0  101.1962    25.8874  0.0000  Parity_calc
-S1                                 557.7558     61.5  220.0429   337.7129  0.0000  serializer
+UART_TX                            827.2201    100.0    0.0000     0.0000  0.0000  UART_TX
+FSM                                189.4487     22.9  110.6098    78.8389  0.0000  FSM
+MUX                                 30.5942      3.7   30.5942     0.0000  0.0000  MUX
+Parity_calc                        127.0836     15.4  101.1962    25.8874  0.0000  Parity_calc
+serializer                         480.0936     58.0  195.3322   284.7614  0.0000  serializer
 --------------------------------  ---------  -------  --------  ---------  ------  -----------
-Total                                                 465.9732   441.2625  0.0000
+Total                                                 437.7324   389.4877  0.0000
 
 1
