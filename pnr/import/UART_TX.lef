@@ -1,0 +1,199 @@
+
+#******
+# Custom-built export LEF (adapted from Lab_PNR_1 ALU.lef template)
+# for UART_TX top module
+#
+# TECH LIB NAME: tsmc13fsg
+#******
+
+VERSION 5.4 ;
+
+NAMESCASESENSITIVE ON ;
+
+DIVIDERCHAR "|" ;
+BUSBITCHARS "[]" ;
+
+UNITS
+    DATABASE MICRONS 100  ;
+END UNITS
+
+MACRO UART_TX
+    CLASS CORE ;
+    FOREIGN UART_TX 0 0 ;
+    ORIGIN 0.00 0.00 ;
+    SIZE 60.00 BY 100.00 ;
+    SYMMETRY X Y ;
+
+    PIN P_DATA[0]
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 95 0.2 95.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END P_DATA[0]
+    PIN P_DATA[1]
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 90 0.2 90.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END P_DATA[1]
+    PIN P_DATA[2]
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 85 0.2 85.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END P_DATA[2]
+    PIN P_DATA[3]
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 80 0.2 80.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END P_DATA[3]
+    PIN P_DATA[4]
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 75 0.2 75.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END P_DATA[4]
+    PIN P_DATA[5]
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 70 0.2 70.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END P_DATA[5]
+    PIN P_DATA[6]
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 65 0.2 65.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END P_DATA[6]
+    PIN P_DATA[7]
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 60 0.2 60.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END P_DATA[7]
+    PIN Data_Valid
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL2 ;
+        RECT  0.00 55 0.2 55.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END Data_Valid
+    PIN PAR_EN
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL2 ;
+        RECT  0.00 50 0.2 50.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END PAR_EN
+    PIN PAR_TYP
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL2 ;
+        RECT  0.00 45 0.2 45.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END PAR_TYP
+    PIN CLK
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 40 0.2 40.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END CLK
+    PIN RST
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 35 0.2 35.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END RST
+    PIN SI
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 30 0.2 30.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END SI
+    PIN SE
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 25 0.2 25.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END SE
+    PIN test_mode
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 20 0.2 20.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END test_mode
+    PIN scan_CLK
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 15 0.2 15.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END scan_CLK
+    PIN scan_RST
+        DIRECTION INPUT ;
+        PORT
+        LAYER METAL3 ;
+        RECT  0.00 10 0.2 10.2 ;
+        END
+        AntennaGateArea 0.0 ;
+    END scan_RST
+
+    PIN SO
+        DIRECTION OUTPUT ;
+        PORT
+        LAYER METAL5 ;
+        RECT  59.80 70 60.00 70.2 ;
+        END
+        AntennaDiffArea 0.575 ;
+    END SO
+    PIN TX_OUT
+        DIRECTION OUTPUT ;
+        PORT
+        LAYER METAL5 ;
+        RECT  59.80 60 60.00 60.2 ;
+        END
+        AntennaDiffArea 0.575 ;
+    END TX_OUT
+    PIN Busy
+        DIRECTION OUTPUT ;
+        PORT
+        LAYER METAL5 ;
+        RECT  59.80 50 60.00 50.2 ;
+        END
+        AntennaDiffArea 0.575 ;
+    END Busy
+
+END UART_TX
+
+END LIBRARY
